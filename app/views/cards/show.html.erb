@@ -11,8 +11,8 @@
             </div>
               <% if user_signed_in? && @card.user_id == current_user.id %>
             <div class="card-action">
-              <%= link_to '編集', "/cards/#{@card.id}/edit", method: :get %>
-              <%= link_to '削除', "/cards/#{@card.id}", method: :delete %>
+              <%= link_to '編集', "/cards/#{@card.id}/edit", method: :get, class:"btn" %>
+              <%= link_to '削除', "/cards/#{@card.id}", method: :delete, class:"btn"%>
             </div>
               <% end %>
           </div>
