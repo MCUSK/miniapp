@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cards blog</title>
+
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+      <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+  <style type="text/css" href="./style.css"></style>
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+</head>
+<body>
+  <header>
+  <nav>
+    <div class="nav-wrapper light-blue darken-4">
+      <%= link_to "blog","/", class: "brand-logo center" %>
+      <% if user_signed_in? %>
+        <div class="user_nav grid-6 right">
+          <%= link_to "ログアウト", destroy_user_session_path,:class =>"waves-effect waves-light btn", method: :delete %>
+          <%= link_to "書き込む", new_card_path, :class =>"waves-effect waves-light btn" %>
+        </div>
+      <% else %>
+        <div class="grid-6 right">
+          <%= link_to "ログイン", new_user_session_path, class: 'post waves-effect waves-light btn' %>
+          <%= link_to "新規登録", new_user_registration_path, class: 'post waves-effect waves-light btn' %>
+        </div>
+      <% end %>
+    </div>
+  </nav>
+</header>
+  <div class="contents">
+<%= yield %>
+  </div>
+</body>
+<footer class="page-footer black">
+  <div class="container black">
+  © 2018 Copyright me
+  </div>
+</footer>
+</html>
