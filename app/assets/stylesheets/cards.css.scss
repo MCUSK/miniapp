@@ -10,9 +10,17 @@ h3{
   color: white;
 }
 
+.title{
+  color: white;
+}
+
+strong{
+  font-size: 20px;
+}
 
 .wrapper{
-  width: 50%;
+  width: 65%;
+  min-width: 650px;
   margin: 0 auto;
 }
 .field{
@@ -24,6 +32,5 @@ h3{
 
 
 .submit{
-
   text-align: center;
 }

@@ -5,9 +5,8 @@
           <div class="card blue-grey darken-1">
             <div class="card-content white-text">
               <span class="card-title"><%= @card.title %></span>
-              <p>
-                <%= simple_format(@card.text) %>
-              </p>
+              <p><%= simple_format(@card.text) %></p><br>
+              <hp class="right">by <%= @card.user.name %></p>
             </div>
               <% if user_signed_in? && @card.user_id == current_user.id %>
             <div class="card-action">
